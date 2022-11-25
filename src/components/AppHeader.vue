@@ -13,8 +13,8 @@ export default {
 <template>
   <header>
     <div class="mc-container row align-items-center d-flex">
-      <nav class="col-5">
-        <ul class="nav">
+      <nav class="col-5 me-auto">
+        <ul class="nav flex-nowrap">
           <li v-for="(link, index) in links" :key="index" class="nav-item">
             <a class="nav-link" aria-current="page" href="#">{{link.text}}</a>
           </li>
@@ -46,6 +46,7 @@ header {
         li{
           a{
             color: $primary-font-color;
+            white-space: nowrap;
             &::after{
               font-family: "Font Awesome 5 Free";
               content: '\f078';
