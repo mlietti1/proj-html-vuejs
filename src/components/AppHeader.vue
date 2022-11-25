@@ -79,12 +79,13 @@ header {
           }
           .toggle-menu {
             right: 0;
-            ul{
+            & ul{
               list-style: none;
               background-color: white;
               border: 2px solid lightgray;
               border-radius: 5px;
-              li{
+              & li{
+                color: $primary-font-color;
                 padding: 6px 12px;
                 cursor: pointer;
                 &:hover{

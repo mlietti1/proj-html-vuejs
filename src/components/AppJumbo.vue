@@ -47,7 +47,7 @@
     font-weight: 600;
   }
   h1{
-    font-size: 3.6rem;
+    font-size: 3.8rem;
     font-weight: 300;
   }
   a.button {
@@ -88,7 +88,7 @@
         li{
           a{
             background-color: white;
-            color: black;
+            color: $primary-font-color;
             display: inline-block;
             line-height: 2.2rem;
             width: 2.2rem;

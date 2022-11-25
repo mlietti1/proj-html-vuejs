@@ -1,16 +1,20 @@
 <script>
 
 import AppJumbo from './AppJumbo.vue';
+import MainContent from './MainContent.vue';
+
 export default {
   name: 'AppMain',
   components:{
-    AppJumbo
+    AppJumbo,
+    MainContent
   }
 }
 </script>
 
 <template>
   <AppJumbo />
+  <MainContent />
 </template>
 
 <style lang="scss" scoped>
