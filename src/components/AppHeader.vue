@@ -13,10 +13,18 @@ export default {
 <template>
   <header>
     <div class="mc-container row align-items-center d-flex">
-      <nav class="col-5 me-auto">
-        <ul class="nav flex-nowrap">
-          <li v-for="(link, index) in links" :key="index" class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">{{link.text}}</a>
+      <nav class="col-5">
+        <ul class="nav">
+          <li @mouseleave="link.active = false" @click="link.active = true" v-for="(link, index) in links" :key="index" class="nav-item position-relative">
+            <a class="nav-link" :class="{'active-link': link.active}" aria-current="page" href="#">{{link.text}}</a>
+            <div v-show="link.active" class="toggle-menu position-absolute">
+              <ul class="p-0">
+                <li>Action</li>
+                <li>Action</li>
+                <li>Action</li>
+                <li>Action</li>
+              </ul>
+            </div>
           </li>
         </ul>
       </nav>
@@ -47,6 +55,7 @@ header {
           a{
             color: $primary-font-color;
             white-space: nowrap;
+            padding: 10px;
             &::after{
               font-family: "Font Awesome 5 Free";
               content: '\f078';
@@ -60,6 +69,28 @@ header {
               font-size: 0.5rem;
               vertical-align: middle;
               line-height: 1rem;
+            }
+            &:hover{
+              color: $green;
+            }
+          }
+          a.active-link {
+            color: $green;
+          }
+          .toggle-menu {
+            right: 0;
+            ul{
+              list-style: none;
+              background-color: white;
+              border: 2px solid lightgray;
+              border-radius: 5px;
+              li{
+                padding: 6px 12px;
+                cursor: pointer;
+                &:hover{
+                  background-color: lightgray;
+                }
+              }
             }
           }
         }
