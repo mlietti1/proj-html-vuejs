@@ -1,6 +1,28 @@
 <script>
+import cards from '../assets/data/courses';
+import CourseCard from './CourseCard.vue';
 export default {
-  name: 'MainContent'
+  name: 'MainContent',
+  components:{
+    CourseCard
+  },
+  data(){
+    return {
+      cards,
+      cardCounterMin: 1,
+      cardCounterMax: 3
+    }
+  },
+  methods:{
+    slideCard(id){
+      this.cardCounterMin = 1;
+      this.cardCounterMax = 3;
+      console.log(id)
+      this.cardCounterMin = id * 3 + 1;
+      this.cardCounterMax = this.cardCounterMin + 2;
+      console.log(this.cardCounterMin, this.cardCounterMax)
+    }
+  }
 }
 </script>
 
@@ -64,8 +86,17 @@ export default {
 
     </div>
 
+    <div class="card-row">
+      <CourseCard v-show="card.id <= this.cardCounterMax && card.id >= this.cardCounterMin" :card="card" v-for="card in cards" :key="card.id" />
+    </div>
+    <div class="card-dots d-flex">
+      <div @click="slideCard(index)" v-for="(n, index) in (cards.length / 3)" :key="index" class="dot" :class="{'active': index === (this.cardCounterMin - 1) / 3}"></div>
+    </div>
+    <div class="bottom-cta">
+      <span>Control your personal preference setting to get notified about appropriate courses. <a href="#">View all courses <i class="fa-solid fa-right-long"></i></a></span>
+    </div>
   </div>
-  
+
 </template>
 
 <style lang="scss" scoped>
@@ -76,7 +107,7 @@ export default {
   padding-top: 190px;
   width: 60%;
   margin: 0 auto;
-
+  color: $primary-font-color;
   .mc-row{
     @include centerFlex('vertical');
     width: 100%;
@@ -217,9 +248,49 @@ export default {
   }
   .mc-row {
     .text-box.central{
-      padding-top: 2rem;
+      padding-top: 4rem;
       width: 100%;
-      margin: 3rem 0;
+      margin: 1rem 0;
+    }
+  }
+  .card-row{
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+  }
+  .card-dots{
+    @include centerFlex('horizontal');
+    margin: 3rem 0;
+    .dot{
+      width: 7px;
+      height: 7px;
+      margin: 0 0.5rem;
+      border-radius: 50%;
+      background-color: lightgray;
+      cursor: pointer;
+    }
+    .dot.active {
+      background-color: $primary-font-color;
+      transform: scale(1.5);
+    
+    }
+  }
+  .bottom-cta {
+    padding: 2rem 0;
+    text-align: center;
+    margin: 0 auto;
+    width: 50%;
+    span{
+      a{
+        color: $primary-font-color;
+        font-weight: 600;
+        text-decoration-color: lightgray;
+        i{
+          text-decoration: underline;
+          text-decoration-color: lightgray;
+        }
+      }
     }
   }
 }
