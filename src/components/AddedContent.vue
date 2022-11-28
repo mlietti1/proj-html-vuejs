@@ -10,8 +10,19 @@ export default {
       <div class="text-box">
         <h5>testimonials</h5>
         <h2>Why do peopls <span>*Hearts*</span> Us?</h2>
-        <p>Seeking for verbals of our</p>
-        <span>Have a question? <a href="#">Get Free Guide <i class="fa-solid fa-right-long"></i></a></span>
+        <p>Seeking for verbals of our service quality? Find them here. Everythimg is transparent and straightforward for your sense of justification.</p>
+        <span><a class="dark" href="#">View All <i class="fa-solid fa-right-long"></i></a></span>
+      </div>
+      <div class="graphics position-relative">
+        <div class="front">
+          <h5>Professional team of specialists and passionate mentors at reach</h5>
+          <p>I need to get a certification for English proficiency and MaxCoach is my best choice. Their tutors are smart and professional when dealing with students.</p>
+          <img class="icon" src="../assets/images/testimonial-avata-01.jpg" alt="avatar">
+          <div class="info">
+            <h4>Madley Pondor</h4>
+            <span>/ IT Specialist</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -66,43 +77,42 @@ export default {
       }
       
     }
-    .img-box{
-      position: relative;
-      width: 50%;
-      .primary-img {
-        width: 100%;
-        border-radius: 5px;
+    
+  }
+  .graphics{
+    width: 60%;
+    .front{
+      border-radius: 5px;
+      box-shadow: 0 0 40px 10px darken($light-bg, $amount: 10%);
+      padding: 3rem;
+      h5{
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 2rem;
       }
-      .secondary-img{
-        position: absolute;
-        width: 30%;
-        border-radius: 5px;
-        bottom: 77%;
-        left: 80%;
-        z-index: 3;
+      p{
+        font-size: 1.2rem;
       }
-      .effect-square{
-        width: 30%;
-        position: absolute;
-        z-index: -1;
-        bottom: 73%;
-        left: 69%;
+      img {
+        width: 12%;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+
       }
-      .effect-circle{
-        position: absolute;
-        width: 20%;
-        top: 90%;
-        left: 70%;
-        z-index: 3;
+      .info {
+        display: inline-block;
+        margin-left: 2rem;
+      
+        vertical-align: middle;
+        h4{
+          text-transform: uppercase;
+          font-size: 1.2rem;
+        }
+        span{
+          color: $secondary-font-color;
+        }
       }
-      .effect-rectangle{
-        position: absolute;
-        width: 30%;
-        right: 80%;
-        top: 70%;
-        z-index: -1;
-      }
-    } 
+    }
   }
 }
 
