@@ -1,6 +1,16 @@
 <script>
+import BlogCard from './BlogCard.vue';
+import cards from '../assets/data/blogs'
 export default {
-  name: 'AddedContent'
+  name: 'AddedContent',
+  components:{
+    BlogCard
+  },
+  data(){
+    return{
+      cards
+    }
+  }
 }
 </script>
 
@@ -60,22 +70,45 @@ export default {
       </div>
     </div>
   </div>
+  <div class="grey-bg">
+    <div class="main-wrapper">
+      <div class="mc-row text-center">
+        <div class="text-box central">
+          <h5>read for more joyment</h5>
+          <h2>Latest from  <span>Our Blogs</span></h2>
+        </div>
+      </div>
+      <div class="card-row">
+        <BlogCard :card="card" v-for="(card, index) in cards" :key="index"/>
+      </div>
+
+    </div>
+  </div>
+  <div class="main-wrapper">
+    <div class="mc-row input-wrapper">
+      <div class="text-box">
+        <h2 class="mb-5">Subscribe <span>Newsletters</span></h2>
+        <p>Enter your email address to register to our newsletter subscription delivered on a regular basis!</p>
+        <input class="mt-5" type="text" placeholder="Enter your email">
+        <button>Subscribe</button>
+      </div>
+    </div>
+  </div>
 </template>
 
 <style lang="scss" scoped>
 @use '../assets/styles/partials/mixin' as *;
 @use '../assets/styles/partials/vars' as *;
 
-.main-wrapper{
-  padding-top: 190px;
+.main-wrapper, .grey-bg, .input-wrapper{
   width: 60%;
-  margin: 0 auto;
+  margin: 150px auto;
   color: $primary-font-color;
   .mc-row{
     @include centerFlex('vertical');
     width: 100%;
     justify-content: space-between;
-    margin-bottom: 3rem;
+    margin: 5rem 0;
     .text-box{
       width: 35%;
       h5{
@@ -217,6 +250,55 @@ export default {
         width: 20%;
         top: 80%;
         right: 100%;
+      }
+    }
+  }
+}
+
+.grey-bg{
+  margin: 0;
+  padding: 50px 0;
+  width: 100%;
+  background-color: $light-bg;
+  .mc-row{
+    .text-box.central{
+      width: 100%;
+      margin: 1rem 0;
+    }
+  }
+  .card-row{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+}
+
+.main-wrapper{
+  .input-wrapper{
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    .text-box{
+      width: 100%;
+      input{
+        padding-left: 1.2rem;
+        margin-left: 0.7rem;
+        height: 3rem;
+        border: none;
+        background-color: #f8f8f8;
+        border-bottom-left-radius: 5px;
+        border-top-left-radius: 5px;
+        
+      }
+      button{
+        background-color: $green;
+        height: 3rem;
+        border: none;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        padding: 0 1rem;
+        color: white;
       }
     }
   }

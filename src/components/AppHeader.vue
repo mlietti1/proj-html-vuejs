@@ -122,7 +122,7 @@ header {
       height: 3rem;
       border: none;
       border-top-right-radius: 5px;
-      border-top-left-radius: 5px;
+      border-bottom-right-radius: 5px;
       padding-right: 0.5rem;
       color: $green;
     }

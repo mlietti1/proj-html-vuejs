@@ -104,7 +104,7 @@ export default {
 @use '../assets/styles/partials/vars' as *;
 
 .main-wrapper{
-  padding-top: 190px;
+  
   width: 60%;
   margin: 0 auto;
   color: $primary-font-color;
@@ -255,7 +255,6 @@ export default {
   }
   .card-row{
     width: 100%;
-    overflow: hidden;
     display: flex;
     justify-content: space-between;
   }

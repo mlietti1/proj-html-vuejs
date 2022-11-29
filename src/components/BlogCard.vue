@@ -1,7 +1,7 @@
 <script>
 export default {
-  name: 'CourseCard',
-  props: {
+  name: 'BlogCard',
+  props:{
     card: Object
   },
   methods:{
@@ -14,17 +14,18 @@ export default {
 
 <template>
   <div class="card">
-    <img :src="getImage(card.img)" class="card-img-top" :alt="'Course image'">
-    <div class="card-body p-4">
-      <h5 class="card-title">{{card.price}}{{card.cents}}</h5>
-      <p class="card-text">{{card.title}}</p>
-      <span><i class="fa-regular fa-file-lines"></i> {{card.lessons}} Lessons</span>
-      <span><i class="fa-regular fa-user"></i> {{card.students}} Students</span>
-    </div>
+  <img :src="getImage(card.imgPath)" class="card-img-top" :alt="card.role">
+  <div class="card-body">
+    <span>{{card.role}}</span>
+    <h5 class="card-title">{{card.title}}</h5>
+    <span><i class="fa-solid fa-calendar"></i> {{card.date}}</span>
+    <span><i class="fa-solid fa-eye"></i> {{card.views}}</span>
   </div>
+</div>
 </template>
 
 <style lang="scss" scoped>
+
 @use '../assets/styles/partials/mixin' as *;
 @use '../assets/styles/partials/vars' as *;
 
