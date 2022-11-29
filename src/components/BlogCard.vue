@@ -16,7 +16,7 @@ export default {
   <div class="card">
   <img :src="getImage(card.imgPath)" class="card-img-top" :alt="card.role">
   <div class="card-body">
-    <span>{{card.role}}</span>
+    <span class="role">{{card.role}}</span>
     <h5 class="card-title">{{card.title}}</h5>
     <span><i class="fa-solid fa-calendar"></i> {{card.date}}</span>
     <span><i class="fa-solid fa-eye"></i> {{card.views}}</span>
@@ -32,9 +32,22 @@ export default {
 .card{
   width: 30%;
   border: none;
+  background-color: transparent;
   .card-body{
-    .card-text{
-      min-height: 3rem;
+    padding: 1rem 0;
+    .role{
+      text-transform: uppercase;
+      color: $secondary-font-color;
+    }
+    .card-title{
+      margin: 1.5rem 0;
+    }
+    span{
+      margin-right: 1rem;
+      color: $secondary-font-color;
+      i{
+        margin-right: 5px;
+      }
     }
   }
 }

@@ -16,14 +16,18 @@ export default {
 </script>
 
 <template>
-  <AppJumbo />
-  <div class="content-bg">
-    <MainContent />
-  </div>
-  <div class="content-bg-white">
-    <AddedContent />
-  </div>
-  <AppFooter />
+
+  <main>
+    <AppJumbo />
+    <div class="content-bg">
+      <MainContent />
+    </div>
+    <div class="content-bg-white">
+      <AddedContent />
+    </div>
+    <AppFooter />
+
+  </main>
 </template>
 
 <style lang="scss" scoped>
@@ -32,6 +36,9 @@ export default {
 .content-bg{
   padding: 190px 0;
   background-image: linear-gradient(white, $light-bg);
+}
+.content-bg-white{
+  padding: 100px 0;
 }
 
 

@@ -53,7 +53,7 @@ export default {
         </div>
       </div>
     </div>
-    <div class="mc-row">
+    <div class="mc-row py-5">
       <div class="img-box position-relative">
         <img class="propic first" src="../assets/images/testimonial-avata-01.jpg" alt="avatar1">
         <img class="propic second" src="../assets/images/testimonial-avata-02.jpg" alt="">
@@ -102,7 +102,7 @@ export default {
 
 .main-wrapper, .grey-bg, .input-wrapper{
   width: 60%;
-  margin: 150px auto;
+  margin: 50px auto;
   color: $primary-font-color;
   .mc-row{
     @include centerFlex('vertical');
@@ -289,7 +289,7 @@ export default {
         background-color: #f8f8f8;
         border-bottom-left-radius: 5px;
         border-top-left-radius: 5px;
-        
+        width: 450px;
       }
       button{
         background-color: $green;
@@ -299,6 +299,10 @@ export default {
         border-bottom-right-radius: 5px;
         padding: 0 1rem;
         color: white;
+        &:active{
+          
+          background-color: lighten($green, $amount: 10%);
+        }
       }
     }
   }
